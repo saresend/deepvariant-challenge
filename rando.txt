@@ -570,8 +570,7 @@ GYPA_HHIP                         rs4292285        4      144,350,802       T
     DBP             0.177                   0.41             Hoﬀmann et al. [8]
 
 
-HAAO-RNU6-242P-
-AC016735.1
+HAAO-RNU6-242P-AC016735.1
 
 rs13403122       2       42,851,618        C       DBP             0.226        
            0.20             Hoﬀmann et al. [8],
@@ -710,8 +709,7 @@ LOC102723446                     rs10260816       7       45,970,501        G
       PP              0.298                   0.43                Wain et al. 
 [27]
 
-LOC105369687-
-LOC105369688
+LOC105369687-LOC105369688
 
 rs73075659      12      20,220,607        G        SBP             0.357        
            0.31                Wain et al. [27]
@@ -721,8 +719,6 @@ LOC105370003                     rs11067763      12     115,760,536       A
 
 
 LOC105371811-LOC105371812
-
-LOC105374567-LOC102723854
 
 rs79917357      17      48,747,312        A        SBP             0.342        
            0.17                Wain et al. [27]
@@ -888,7 +884,7 @@ al. [8],
 
 Warren et al. [26]
 
-NPPA-AS1, NPPA                rs12744757       1       11,846,764        T      
+NPPA-AS1,NPPA                rs12744757       1       11,846,764        T      
   SBP             0.695                   0.06                Wain et al. [27]
 
 
@@ -1092,8 +1088,7 @@ RABGAP1                             rs10818775       9      122,993,292       C
 [8]
 
 
-RAPSN, PSMC3,
-SLC39A13
+RAPSN,PSMC3,SLC39A13
 
 rs7103648       11      47,440,232        A       DBP            −0.203         
          0.33                Ehret et al. [12]
@@ -1144,8 +1139,7 @@ Hoﬀmann et al. [8],
 Warren  et al. [26]
 
 
-RP4-710M16.1-PPAP2B-
-PLPP3
+RP4-710M16.1-PPAP2B-PLPP3
 
 Hoﬀmann et al. [8],
 rs112557609      1       56,111,252        A         PP              0.227      
@@ -1350,8 +1344,7 @@ TMEM161B                          rs10059921       5       88,218,698        T
 Warren et al. [26]
 
 
-TMEM194B-NEMP2-
-NAB1
+TMEM194B-NEMP2-NAB1
 
 rs7592578        2      190,574,865       T       DBP              0.240        
           0.18             Hoﬀmann et al. [8],
