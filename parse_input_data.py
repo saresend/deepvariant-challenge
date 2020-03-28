@@ -50,5 +50,7 @@ def main():
     print(len(df))
     data_frame = pd.DataFrame(df) 
     print(data_frame.head(100))
+    csv_file = open("hypertension_markers.csv", 'w')
+    csv_file.write(data_frame.to_csv(index=False))
 
 main()
