@@ -70,6 +70,14 @@ This command will take the output analysis and VCF files, and copy it locally.
 
 ## Step 6: Run Similarity analysis:
 
+### Step 6.1: Jupyter Notebook installation
+
+For installation instructions for jupyter notebooks, please refer to: https://jupyter.org/install
+
+Inside is some preliminary analysis, and allows for flexibility to play around with the resulting data and conduct additional analysis.
+
+### Step 6.2: Running The notebook
+
 The following command should analysis the resulting VCF file, and compare it with the data in the journal, loaded as `hypertension_markers.csv`.
 
 This requires you to have jupyter notebook installed, please run:
@@ -77,9 +85,3 @@ This requires you to have jupyter notebook installed, please run:
 ```
 jupyter notebook vcf_compare.ipynb
 ```
-
-### Step 6.1: Jupyter Notebook installation
-
-For installation instructions for jupyter notebooks, please refer to: https://jupyter.org/install
-
-Inside is some preliminary analysis, and allows for flexibility to play around with the resulting data and conduct additional analysis.
