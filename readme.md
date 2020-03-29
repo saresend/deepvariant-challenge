@@ -70,7 +70,9 @@ This should provide a list of all your currently running containers. Look for on
 docker cp <container_name>:/output .
 ```
 
-This command will take the output analysis and VCF files, and copy it locally.
+This command will take the output analysis and VCF files, and copy it locally. If all is well, you be able to open a `output.visual_report.html` file in the `output/` directory, and see something like the following:
+
+![alt](images/output1.png)
 
 ## Step 6: Run Similarity analysis:
 
