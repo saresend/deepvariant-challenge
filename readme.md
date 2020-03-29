@@ -23,7 +23,7 @@ sudo apt -y update
 sudo apt-get -y install docker.io
 ```
 
-## Step 2: Downloading Sample data (Optional)
+## Step 2.2: Downloading Sample data (Optional)
 
 The following command will load a truncated dataset provided by google for demonstration purposes. If running on an individual dataset please substitute with that.
 
@@ -32,7 +32,9 @@ cd deepvariant-challenge
 ./load_test_data.sh
 ```
 
-### Step 2: Running Docker Build
+**Note:** You may need to give this execute privilege by running `chmod +x load_test_data.sh`. If you get issues that say something about about `permission denied`, this is probably the issue.
+
+### Step 3: Running Docker Build
 
 This command will build the image, and also run the analysis on the data provided in the previous steps
 
