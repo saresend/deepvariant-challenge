@@ -92,3 +92,11 @@ jupyter notebook vcf_compare.ipynb
 ```
 
 Inside is some preliminary analysis, and allows for flexibility to play around with the resulting data and conduct additional analysis.
+
+## Full genomic Sequencing
+
+In addition to this small test dataset, we also have the full dataset available. The modifications to run with this dataset are first, instead of running `./load_test_data.sh`, to run `./load_full_genome.sh`, which will pull the entire dataset. Warning: it is about 110 GBs in size. You can then run the following command to build the actual docker container:
+
+```
+sudo docker build deepvariant-challenge/ --build-arg ref_file=testdata/hs37d5.fa.gz --build-arg bam_file=testdata/HG002_NIST_150bp_50x.bam --tag lahacks:0.1
+```
