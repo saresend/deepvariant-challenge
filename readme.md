@@ -1,6 +1,6 @@
 # Introduction
-![alt](https://img.shields.io/github/license/saresend/deepvariant-challenge)
 
+![alt](https://img.shields.io/github/license/saresend/deepvariant-challenge)
 
 ### Submission Info
 
@@ -91,11 +91,12 @@ For installation instructions for jupyter notebooks, please refer to: https://ju
 The following command should analysis the resulting VCF file, and compare it with the data in the journal, loaded as `hypertension_markers.csv`.
 
 This requires you to have jupyter notebook installed, please run:
-**Note:** This notebook uses `python3`
 
 ```
 jupyter notebook vcf_compare.ipynb
 ```
+
+**Note:** This notebook uses `python3`
 
 Inside is some preliminary analysis, and allows for flexibility to play around with the resulting data and conduct additional analysis.
 
@@ -108,3 +109,21 @@ sudo docker build deepvariant-challenge/ --build-arg ref_file=testdata/hs37d5.fa
 ```
 
 Otherwise, the commands remain the same and you should be able to produce VCF files for the full genomic sequence, rather than just the test dataset.
+
+## Benchmarks for the project and other info for scaling up successfully
+
+During development for this project, the following instances were used:
+
+| Instance                      | CPUs | Memory | Success |
+| ----------------------------- | ---- | ------ | ------- |
+| n1-highmem-32 (GCP)           | 32   | 208 GB | No      |
+| standard - 40 (Digital Ocean) | 4    | 160 GB | No      |
+| standard - 80 (Digital Ocean) | 6    | 320 GB | No      |
+
+Below is a speed reference for a full genome sequenced by deepvariant, as a sense of how long one might expect this to take for a given instance. It seems that it scales fairly linearly, meaning that we might expect a `32 CPU` machine to run in about double the time of a `64 CPU` machine.
+
+| Step                               | Hardware | Wall time |
+| ---------------------------------- | -------- | --------- |
+| `make_examples`                    | 64 CPUs  | ~ 1h 46m  |
+| `call_variants`                    | 64 CPUs  | ~ 3h 09m  |
+| `postprocess_variants` (with gVCF) | 1 CPU    | ~ 53m     |
