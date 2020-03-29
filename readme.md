@@ -100,3 +100,5 @@ In addition to this small test dataset, we also have the full dataset available.
 ```
 sudo docker build deepvariant-challenge/ --build-arg ref_file=testdata/hs37d5.fa.gz --build-arg bam_file=testdata/HG002_NIST_150bp_50x.bam --tag lahacks:0.1
 ```
+
+Otherwise, the commands remain the same and you should be able to produce VCF files for the full genomic sequence, rather than just the test dataset.
