@@ -1,4 +1,6 @@
 # Introduction
+![alt](https://img.shields.io/github/license/saresend/deepvariant-challenge)
+
 
 ### Submission Info
 
