@@ -74,14 +74,15 @@ This command will take the output analysis and VCF files, and copy it locally.
 
 For installation instructions for jupyter notebooks, please refer to: https://jupyter.org/install
 
-Inside is some preliminary analysis, and allows for flexibility to play around with the resulting data and conduct additional analysis.
-
 ### Step 6.2: Running The notebook
 
 The following command should analysis the resulting VCF file, and compare it with the data in the journal, loaded as `hypertension_markers.csv`.
 
 This requires you to have jupyter notebook installed, please run:
+**Note:** This notebook uses `python3`
 
 ```
 jupyter notebook vcf_compare.ipynb
 ```
+
+Inside is some preliminary analysis, and allows for flexibility to play around with the resulting data and conduct additional analysis.
