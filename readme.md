@@ -1,10 +1,10 @@
-# Introduction
-
 <p align="center">
   <img src="images/cover.png" />
 </p>
 
 ![alt](https://img.shields.io/github/license/saresend/deepvariant-challenge)
+
+# Introduction
 
 ### Submission Info
 
