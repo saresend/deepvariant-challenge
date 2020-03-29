@@ -1,4 +1,6 @@
 # Introduction
+![alt](https://img.shields.io/github/license/saresend/deepvariant-challenge)
+
 
 The following steps should provide a fairly complete step by step how-to as to how to run
 google's deepvariant project with hypertension journal information. Project proposed by Office Ally,
