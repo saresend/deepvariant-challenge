@@ -28,6 +28,7 @@ sudo apt-get -y install docker.io
 The following command will load a truncated dataset provided by google for demonstration purposes. If running on an individual dataset please substitute with that.
 
 ```
+cd deepvariant-challenge
 ./load_test_data.sh
 ```
 
@@ -36,7 +37,8 @@ The following command will load a truncated dataset provided by google for demon
 This command will build the image, and also run the analysis on the data provided in the previous steps
 
 ```
-docker build deepvariant-challenge --tags lahacks:0.1
+cd ..
+docker build deepvariant-challenge --tag lahacks:0.1
 ```
 
 ## Step 4:
@@ -44,7 +46,7 @@ docker build deepvariant-challenge --tags lahacks:0.1
 We use this command to instantiate our image, allowing us to collect the data that is the result of the analysis
 
 ```
-cd deepvariant
+cd deepvariant-challenge
 docker run -dit lahacks:0.1
 ```
 
@@ -63,7 +65,7 @@ This should provide a list of all your currently running containers. Look for on
 ### Step 5.2: Copy files from Container
 
 ```
-docker cp <container_name>/output output/
+docker cp <container_name>:/output .
 ```
 
 This command will take the output analysis and VCF files, and copy it locally.

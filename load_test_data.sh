@@ -4,13 +4,11 @@
 
 INPUT_DIR="${PWD}/testdata" # Note: this should line up with input directory in Dockerfile
 DATA_HTTP_DIR="https://storage.googleapis.com/deepvariant/quickstart-testdata"
-OUTPUT_DIR="${PWD}/output"
 
 
 # Note that this simply pulls the test information from google, and 
 # is primarily for demonstration. For real use please populate $INPUT_DIR
 # with your own data.
-mkdir -p ${OUTPUT_DIR}
 mkdir -p ${INPUT_DIR}
 wget -P ${INPUT_DIR} "${DATA_HTTP_DIR}"/NA12878_S1.chr20.10_10p1mb.bam
 wget -P ${INPUT_DIR} "${DATA_HTTP_DIR}"/NA12878_S1.chr20.10_10p1mb.bam.bai
