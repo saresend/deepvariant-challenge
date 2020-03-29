@@ -1,5 +1,7 @@
 # Introduction
 
+![alt](images/cover.png)
+
 ![alt](https://img.shields.io/github/license/saresend/deepvariant-challenge)
 
 ### Submission Info
@@ -110,7 +112,7 @@ sudo docker build deepvariant-challenge/ --build-arg ref_file=testdata/hs37d5.fa
 
 Otherwise, the commands remain the same and you should be able to produce VCF files for the full genomic sequence, rather than just the test dataset.
 
-## Benchmarks for the project and other info for scaling up successfully
+## Benchmarks for the project
 
 During development for this project, the following instances were used:
 
