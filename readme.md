@@ -10,13 +10,13 @@
 
 For submission info, please see [submission.md](submission.md)
 
-The following steps should provide a fairly complete step by step how-to as to how to run
+The following steps provide step by step instructions for how to run
 google's deepvariant project with hypertension journal information. Project proposed by Office Ally,
 and is a submission for LA Hacks 2020.
 
 ### Notes and Disclaimers:
 
-This project has only been tested with Ubuntu 18.X. It should work fairly as-is with most linux distros, and can certainly be ported to Windows and Mac. However, instructions will be written with linux in mind.
+This project has only been tested with Ubuntu 18.X. It should work as-is with most linux distros, and can certainly be ported to Windows and Mac. However, instructions are written with linux in mind.
 
 ## Step 1: Clone this repo:
 
@@ -24,16 +24,16 @@ This project has only been tested with Ubuntu 18.X. It should work fairly as-is 
 git clone https://github.com/saresend/deepvariant-challenge
 ```
 
-## Step 2.1: Installing docker
+### Step 2.1: Install docker
 
-If you are running on a fresh image, it is possible that you need to install docker. If so, please run the following:
+If you are running on a fresh image, you may need to install docker. If so, please run the following:
 
 ```
 sudo apt -y update
 sudo apt-get -y install docker.io
 ```
 
-## Step 2.2: Downloading Sample data (Optional)
+### Step 2.2: Download Sample data (Optional)
 
 The following command will load a truncated dataset provided by google for demonstration purposes. If running on an individual dataset please substitute with that.
 
@@ -42,20 +42,20 @@ cd deepvariant-challenge
 ./load_test_data.sh
 ```
 
-**Note:** You may need to give this execute privilege by running `chmod +x load_test_data.sh`. If you get issues that say something about about `permission denied`, this is probably the issue.
+**Note:** You may need to give this execute privilege by running `chmod +x load_test_data.sh`. If you get issues that say something about `permission denied`, this is probably the issue.
 
-## Step 3: Running Docker Build
+## Step 3: Run Docker Build
 
-This command will build the image, and also run the analysis on the data provided in the previous steps
+This command will build the image and run the analysis on the data provided in the previous steps
 
 ```
 cd ..
 docker build deepvariant-challenge --tag lahacks:0.1
 ```
 
-## Step 4:
+## Step 4: Instantiate docker image
 
-We use this command to instantiate our image, allowing us to collect the data that is the result of the analysis
+The following command instantiates our image, allowing us to collect the data that is the result of the analysis
 
 ```
 cd deepvariant-challenge
@@ -66,13 +66,13 @@ docker run -dit lahacks:0.1
 
 ### Step 5.1: Get Container Identifier
 
-Please run the following command:
+Run the following command:
 
 ```
 docker ps
 ```
 
-This should provide a list of all your currently running containers. Look for one tagged lahacks:0.1, and find the entry under name. Common ones are things like `mythical_tree`, etc.
+This provides a list of all currently running containers. Look for one tagged lahacks:0.1, and find the entry under name. Common ones are things like `mythical_tree`, etc.
 
 ### Step 5.2: Copy files from Container
 
@@ -80,7 +80,7 @@ This should provide a list of all your currently running containers. Look for on
 docker cp <container_name>:/output .
 ```
 
-This command will take the output analysis and VCF files, and copy it locally. If all is well, you be able to open a `output.visual_report.html` file in the `output/` directory, and see something like the following:
+This command will take the output analysis and VCF files and copy it locally. If all is well, you should be able to open a `output.visual_report.html` file in the `output/` directory, and see something like the following:
 
 ![alt](images/output1.png)
 
@@ -90,11 +90,11 @@ This command will take the output analysis and VCF files, and copy it locally. I
 
 For installation instructions for jupyter notebooks, please refer to: https://jupyter.org/install
 
-### Step 6.2: Running The notebook
+### Step 6.2: Run The notebook
 
-The following command should analysis the resulting VCF file, and compare it with the data in the journal, loaded as `hypertension_markers.csv`.
+The following command analyzes the resulting VCF file, and compares it with the data in the journal loaded from `hypertension_markers.csv`.
 
-This requires you to have jupyter notebook installed, please run:
+The following command requires you to have jupyter notebook installed:
 
 ```
 jupyter notebook vcf_compare.ipynb
@@ -102,11 +102,15 @@ jupyter notebook vcf_compare.ipynb
 
 **Note:** This notebook uses `python3`
 
-Inside is some preliminary analysis, and allows for flexibility to play around with the resulting data and conduct additional analysis.
+The notebook provides some preliminary analysis and allows for flexibility to play around with the resulting data and conduct additional analyses.
 
 ## Full genomic Sequencing
 
-In addition to this small test dataset, we also have the full dataset available. The modifications to run with this dataset are first, instead of running `./load_test_data.sh`, to run `./load_full_genome.sh`, which will pull the entire dataset. Warning: it is about 110 GBs in size. You can then run the following command to build the actual docker container:
+In addition to this small test dataset, we also have the full dataset available. The modifications to run with this dataset are first, instead of running `./load_test_data.sh`, please run `./load_full_genome.sh`, which will pull the entire dataset.
+
+**Warning**: it is about 110 GB in size.
+
+You can then run the following command to build the actual docker container:
 
 ```
 sudo docker build deepvariant-challenge/ --build-arg ref_file=testdata/hs37d5.fa.gz --build-arg bam_file=testdata/HG002_NIST_150bp_50x.bam --tag lahacks:0.1
